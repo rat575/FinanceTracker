@@ -1,12 +1,14 @@
-const {MongoClient} = require('mongodb')
-require('dotenv').config();
-
-const uri = process.env.URI;
-const client = new MongoClient(uri);
+const mongoose = require('mongoose');
 
 async function connectDB() {
     try {
-        await client.connect();
+        const uri = process.env.URI;
+
+        if (!uri) {
+            throw new Error('URI is missing from Server/.env');
+        }
+
+        await mongoose.connect(uri);
         console.log('Connected to MongoDB');
     } catch (err) {
         console.error('Database connection failed:', err);
