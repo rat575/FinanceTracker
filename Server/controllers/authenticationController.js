@@ -1,7 +1,7 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 
-const signUp = async (req, res) => {
+const handleSignUp = async (req, res) => {
   try {
     const { name, email, password, phone } = req.body;
     if (!name || !email || !password || !phone) {
@@ -31,4 +31,4 @@ const signUp = async (req, res) => {
   }
 };
 
-module.exports = { signUp };
+module.exports = { handleSignUp };
