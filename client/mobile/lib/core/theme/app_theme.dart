@@ -31,5 +31,19 @@ class AppTheme {
         borderSide: BorderSide.none,
       ),
     ),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: WidgetStateProperty.resolveWith<Color>((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return Colors.grey;
+          }
+          if (states.contains(WidgetState.pressed)) {
+            return AppColor.pressedButtonColor;
+          }
+          return AppColor.teritoryColor;
+        }),
+      ),
+    ),
   );
 }

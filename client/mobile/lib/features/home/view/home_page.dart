@@ -21,45 +21,65 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          child: Center(
+          child: SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: SizedBox(
-                      height: 100,
-                      width: 100,
-                      child: Center(
-                        child: Text(
-                          '100',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
+                  Expanded(
+                    child: Card(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: SizedBox(
+                        height: double.infinity,
+                        width: double.infinity,
+                        child: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(25),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.asset(
+                                'assets/images/plant.png',
+                                height: double.infinity,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
-                  Text(
-                    'Expense Tracker',
-                    style: AppTheme.lightTheme.textTheme.headlineSmall,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomePage(),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'Master Your Finance ',
+                          style: AppTheme.lightTheme.textTheme.headlineMedium,
                         ),
-                      );
-                    },
-                    child: const Text('Get Started'),
+                        SizedBox(height: 12),
+
+                        Text(
+                          'Track your income, manage expenses, and build better financial habits with smart insights.',
+                          style: AppTheme.lightTheme.textTheme.bodyLarge,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const HomePage(),
+                              ),
+                            );
+                          },
+                          child: const Text('Get Started'),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
