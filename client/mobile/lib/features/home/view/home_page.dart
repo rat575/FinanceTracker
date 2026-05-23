@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/core/theme/app_theme.dart';
+import 'package:mobile/features/auth/view/login_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -59,7 +60,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           'Master Your Finance ',
-                          style: AppTheme.lightTheme.textTheme.headlineMedium,
+                          style: AppTheme.lightTheme.textTheme.headlineLarge,
                         ),
                         SizedBox(height: 12),
 
@@ -67,12 +68,13 @@ class HomePage extends StatelessWidget {
                           'Track your income, manage expenses, and build better financial habits with smart insights.',
                           style: AppTheme.lightTheme.textTheme.bodyLarge,
                         ),
+                        SizedBox(height: 12),
                         ElevatedButton(
                           onPressed: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomePage(),
+                                builder: (context) => LoginPage(),
                               ),
                             );
                           },

@@ -11,25 +11,10 @@ class AppTheme {
     colorScheme: ColorScheme.fromSeed(seedColor: AppColor.primaryColor),
     textTheme: AppTextTheme.lightTextTheme,
 
-    appBarTheme: const AppBarTheme(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      centerTitle: true,
-      foregroundColor: AppColor.textPrimary,
-    ),
-
     cardTheme: CardThemeData(
       color: AppColor.glass,
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
-    ),
-    inputDecorationTheme: InputDecorationTheme(
-      filled: true,
-      fillColor: AppColor.backgroundColor,
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(16),
-        borderSide: BorderSide.none,
-      ),
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -41,8 +26,22 @@ class AppTheme {
           if (states.contains(WidgetState.pressed)) {
             return AppColor.pressedButtonColor;
           }
+          if (states.contains(WidgetState.hovered)) {
+            return AppColor.pressedButtonColor.withValues(alpha: 0.5);
+          }
           return AppColor.teritoryColor;
         }),
+        foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+        padding: WidgetStateProperty.all<EdgeInsets>(
+          const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        ),
+
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        ),
+        textStyle: WidgetStateProperty.all<TextStyle>(
+          const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+        ),
       ),
     ),
   );
