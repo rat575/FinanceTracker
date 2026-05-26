@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/core/theme/app_theme.dart';
+import 'package:mobile/core/widgets/gradient_background.dart';
 import 'package:mobile/features/auth/view/login_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,20 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Container(
-          height: double.infinity,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color.fromARGB(255, 112, 168, 157),
-                Color.fromARGB(255, 142, 244, 156),
-                Color.fromARGB(255, 244, 244, 244),
-              ],
-            ),
-          ),
+        child: GradientBackground(
           child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.all(20),

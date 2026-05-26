@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/core/theme/app_theme.dart';
+import 'package:mobile/core/widgets/gradient_background.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,25 +12,34 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color.fromARGB(255, 112, 168, 157),
-              Color.fromARGB(255, 142, 244, 156),
-              Color.fromARGB(255, 244, 244, 244),
-            ],
-          ),
-        ),
+      body: GradientBackground(
         child: SafeArea(
-          child: Column(
-            children: [
-              Text('Login', style: AppTheme.lightTheme.textTheme.headlineLarge),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: Column(
+              children: [
+                Text(
+                  'Login',
+                  style: AppTheme.lightTheme.textTheme.headlineLarge,
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Email'),
+                      ),
+                      SizedBox(height: 12),
+                      TextFormField(
+                        decoration: InputDecoration(labelText: 'Password'),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

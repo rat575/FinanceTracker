@@ -18,5 +18,9 @@ class AppColor {
   static const Color textPrimary = Color(0xFF1B1B1D);
   static const Color textSecondary = Color(0xFF45464D);
 
+  static const gradient1 = Color.fromARGB(255, 112, 168, 157);
+  static const gradient2 = Color.fromARGB(255, 142, 244, 156);
+  static const gradient3 = Color.fromARGB(255, 244, 244, 244);
+
   static const Color glass = Colors.white70;
 }
