@@ -15,8 +15,8 @@ class AppColor {
   static const Color warning = Color(0xFFF59E0B);
   static const Color success = Color(0xFF10B981);
 
-  static const Color textPrimary = Color(0xFF1B1B1D);
-  static const Color textSecondary = Color(0xFF45464D);
+  static const Color textPrimary = Color(0xFF01372C);
+  static const Color textSecondary = Color(0xFF053E2F);
 
   static const gradient1 = Color.fromARGB(255, 112, 168, 157);
   static const gradient2 = Color.fromARGB(255, 142, 244, 156);
